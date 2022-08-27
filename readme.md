@@ -1,7 +1,7 @@
 This is a server made on firebase authentication and Firestore.
 
 This is made as a submission for Garuda Hacks 2022.
-The project name is HospiCare.
+# The project name is Hospitability.
 
 To run the server you can use the following commands
 

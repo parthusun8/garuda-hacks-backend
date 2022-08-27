@@ -10,7 +10,7 @@ To run the server you can use the following commands
 ### 'npm start'
 
 
-There are the following API's made:
+These are the following API's made:
 
 Base Url -- localhost:3000
 

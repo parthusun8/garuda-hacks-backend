@@ -33,7 +33,8 @@ GET REQUESTS --
  ![image](https://user-images.githubusercontent.com/77690791/187014184-74555f9c-86fc-45c4-975b-2e9648883022.png)
  
  SignUp
- ![image](https://user-images.githubusercontent.com/77690791/187014145-1f21c21c-09da-485d-aa3e-5b7b340a2c72.png)
+ ![image](https://user-images.githubusercontent.com/77690791/187015552-4a80c4dc-d0ba-4b64-995b-81ac4383f0a0.png)
+
 
  Update Room Status
  ![WhatsApp Image 2022-08-27 at 12 40 29 AM](https://user-images.githubusercontent.com/77690791/187014293-cb27f2b6-47b8-48d1-8855-1b2be0634497.jpeg)

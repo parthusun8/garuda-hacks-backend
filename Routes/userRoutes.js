@@ -11,5 +11,5 @@ router.post("/updateroomstatus", userController.updateUser);
 router.post("/getrooms", userController.getRoom);
 router.post("/addfloor", userController.addFloor);
 // just made it in case we decide to make a admin portal
-router.get("/all", userController.getAllUsers);
+router.post("/all", userController.getAllUsers);
 module.exports = router;

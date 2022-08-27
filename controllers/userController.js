@@ -3,7 +3,6 @@ const {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } = require("firebase/auth");
-
 const {
   getDocs,
   getDoc,
@@ -17,12 +16,11 @@ const {
   query,
   where,
   increment,
+  GeoPoint,
 } = require("firebase/firestore");
 
+
 // /api/users/login
-//COMPLETED////////////////////////////////
-// ////////////////////////////////////////
-//////////////////////////////////////////
 const user_login = async (req, res) => {
   try {
     const userData = req.body;
@@ -41,12 +39,8 @@ const user_login = async (req, res) => {
     res.status(500).send(err.code?.split("/")[1]);
   }
 };
-//       /////////////////////////////////
 
 // /api/users/signup
-//COMPLETED////////////////////////////////
-// ////////////////////////////////////////
-//////////////////////////////////////////
 const user_register = async (req, res) => {
   try {
     const hospitalData = req.body;
@@ -57,8 +51,8 @@ const user_register = async (req, res) => {
       hospitalData.loginPass
     );
     // console.log(userCredentials.user[operationType]);
-    const uid = userCredentials.user.uid;
     delete hospitalData.loginPass;
+    const uid = userCredentials.user.uid;
 
     //adding Hospital to firestore
     const usersRef = doc(db, `hospitals/${uid}`);
@@ -66,7 +60,10 @@ const user_register = async (req, res) => {
       name: hospitalData.name,
       email: hospitalData.loginEmail,
       location: hospitalData.location,
+      geolocation : new GeoPoint(req.body.latitude, req.body.longitude),
+      hospId : uid,
     };
+    console.log("Basic Hospital Details",basic_doc_details);
     await setDoc(usersRef, basic_doc_details);
 
     const floor_details = hospitalData.floors;
@@ -94,12 +91,8 @@ const user_register = async (req, res) => {
     res.status(500).send(err.code?.split("/")[1]);
   }
 };
-//       /////////////////////////////////
 
 // users/getrooms
-//COMPLETED////////////////////////////////
-// ////////////////////////////////////////
-//////////////////////////////////////////
 const getRoom = async (req, res) => {
   try {
     console.log(req.body);
@@ -113,13 +106,8 @@ const getRoom = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-/////////////////////////////////////////
 
 // users/gethospital
-//Sends Basic Data
-//COMPLETED////////////////////////////////
-// ////////////////////////////////////////
-//////////////////////////////////////////
 const getUserDetails = async (req, res) => {
   try {
     console.log(req.body);
@@ -136,12 +124,8 @@ const getUserDetails = async (req, res) => {
     res.status(500).send(err.message);
   }
 };
-//////////////////////////////////////////
 
 // /api/users/updateroomstatus
-//COMPLETED////////////////////////////////
-// ////////////////////////////////////////
-//////////////////////////////////////////
 const updateUser = async (req, res) => {
   try {
     console.log(req.body);
@@ -159,7 +143,6 @@ const updateUser = async (req, res) => {
     res.status(500).send("Server error");
   }
 };
-//////////////////////////////////////////
 
 // /api/addfloor
 const addFloor = async (req, res) => {
@@ -195,11 +178,12 @@ const addFloor = async (req, res) => {
   }
 };
 
-// /api/users/getAllUsers
+// /api/users/all
 const getAllUsers = async (req, res) => {
   try {
     const colref = collection(db, "hospitals");
-    const userSnapshot = await getDocs(colref);
+    const q = query(colref, where("location", "==", req.body.state));
+    const userSnapshot = await getDocs(q);
     const userList = userSnapshot.docs.map((doc) => doc.data());
     console.log(userList);
     res.send(userList);

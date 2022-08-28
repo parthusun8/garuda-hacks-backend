@@ -1,14 +1,13 @@
 This is a server made on firebase authentication and Firestore.
 
-This is made as a submission for Garuda Hacks 2022.
-# The project name is Hospitability.
+# Project name: Hospitability.
 
-<h2>Check the font-end repo at: https://github.com/SSHSRN/GarudaHacks-3.0__Hospitability</h2>
+<h2>Check the font-end repo at: https://github.com/SSHSRN/Hospitability</h2>
 
 
 To run the server you can use the following commands
 
-### 'git clone https://github.com/parthusun8/garudha-hacks-backend'
+### 'git clone https://github.com/parthusun8/hospitability-backend.git'
 ### 'npm i'
 ### 'npm start'
 

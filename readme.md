@@ -3,6 +3,9 @@ This is a server made on firebase authentication and Firestore.
 This is made as a submission for Garuda Hacks 2022.
 # The project name is Hospitability.
 
+<h2>Check the font-end repo at: https://github.com/SSHSRN/GarudaHacks-3.0__Hospitability</h2>
+
+
 To run the server you can use the following commands
 
 ### 'git clone https://github.com/parthusun8/garudha-hacks-backend'
@@ -29,18 +32,18 @@ GET REQUESTS --
   
  THE BELOW SCREENSHOTS WILL HELP YOU TO FORM BODY OF THE REQUEST
  
- Login
+ Login<br>
  ![image](https://user-images.githubusercontent.com/77690791/187014184-74555f9c-86fc-45c4-975b-2e9648883022.png)
  
- SignUp
+ SignUp<br>
  ![image](https://user-images.githubusercontent.com/77690791/187015552-4a80c4dc-d0ba-4b64-995b-81ac4383f0a0.png)
 
 
- Update Room Status
+ Update Room Status<br>
  ![WhatsApp Image 2022-08-27 at 12 40 29 AM](https://user-images.githubusercontent.com/77690791/187014293-cb27f2b6-47b8-48d1-8855-1b2be0634497.jpeg)
   
- Add Floor to a Hospital
+ Add Floor to a Hospital<br>
  ![image](https://user-images.githubusercontent.com/77690791/187014260-995ca746-99f6-4925-a000-49f2310f7497.png)
 
-  Get Room details Of Particular Hospital
+  Get Room details Of Particular Hospital<br>
 ![WhatsApp Image 2022-08-27 at 12 28 58 AM](https://user-images.githubusercontent.com/77690791/187014322-03eef529-5ad6-476e-8eb7-3b6618e01fce.jpeg)
